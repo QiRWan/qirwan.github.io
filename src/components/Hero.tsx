@@ -12,11 +12,11 @@ const Hero = () => {
         </p>
         
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up text-foreground" style={{ animationDelay: "0.2s" }}>
-          Hi, I'm <span className="text-primary">Alex</span>
+          Hi, I'm <span className="text-primary">Robin:)</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          A creative developer crafting beautiful digital experiences with code and design.
+        2nd year Computer Engineering Student at University of Toronto
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
