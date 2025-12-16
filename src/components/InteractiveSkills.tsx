@@ -6,10 +6,6 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  longDescription: string;
-  images: string[];
-  technologies: string[];
-  link?: string;
 }
 
 interface Skill {
@@ -23,103 +19,70 @@ const skillsData: Skill[] = [
     name: "Verilog",
     category: "Hardware",
     projects: [
-      { 
-        id: "1", 
-        title: "FPGA Signal Processor", 
-        description: "Real-time signal processing on Xilinx FPGA",
-        longDescription: "Developed a high-performance signal processing system on a Xilinx Artix-7 FPGA. The project involved implementing FFT algorithms, digital filters, and real-time data streaming capabilities. Achieved processing speeds of over 100 MHz with minimal latency for audio and RF signal applications.",
-        images: ["https://images.unsplash.com/photo-1518770660439-4636190af475?w=800", "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800"],
-        technologies: ["Verilog", "Vivado", "FPGA", "DSP"],
-        link: "https://github.com"
-      },
+      { id: "1", title: "FPGA Signal Processor", description: "Real-time signal processing on Xilinx FPGA" },
+      { id: "2", title: "UART Controller", description: "Custom UART communication module" },
     ],
   },
   {
     name: "C++",
     category: "Programming",
     projects: [
-      { 
-        id: "3", 
-        title: "Game Engine", 
-        description: "Custom 2D game engine with physics",
-        longDescription: "Built a complete 2D game engine from scratch featuring a component-based architecture, physics simulation with collision detection, sprite rendering with batch optimization, and an event-driven input system. The engine supports custom shaders and includes a level editor.",
-        images: ["https://images.unsplash.com/photo-1556438064-2d7646166914?w=800"],
-        technologies: ["C++", "OpenGL", "SDL2", "Box2D"],
-        link: "https://github.com"
-      },
+      { id: "3", title: "Game Engine", description: "Custom 2D game engine with physics" },
+      { id: "4", title: "Data Structures Library", description: "Optimized implementations of common data structures" },
     ],
   },
   {
     name: "Python",
     category: "Programming",
     projects: [
-      { 
-        id: "5", 
-        title: "ML Image Classifier", 
-        description: "CNN-based image classification system",
-        longDescription: "Created a convolutional neural network for image classification achieving 95% accuracy on custom datasets. Implemented data augmentation, transfer learning with ResNet, and deployed the model as a REST API for real-time predictions.",
-        images: ["https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800"],
-        technologies: ["Python", "TensorFlow", "Keras", "Flask"],
-      },
+      { id: "5", title: "ML Image Classifier", description: "CNN-based image classification system" },
+      { id: "6", title: "Automation Scripts", description: "Workflow automation tools" },
     ],
   },
   {
     name: "Adobe Illustrator",
     category: "Design",
     projects: [
-      { 
-        id: "7", 
-        title: "Brand Identity", 
-        description: "Complete branding for tech startup",
-        longDescription: "Designed a comprehensive brand identity system including logo, color palette, typography guidelines, business cards, letterheads, and social media templates. The modern minimalist aesthetic helped establish the startup's professional presence.",
-        images: ["https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800", "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800"],
-        technologies: ["Illustrator", "Photoshop", "InDesign"],
-      },
+      { id: "7", title: "Brand Identity", description: "Complete branding for tech startup" },
+      { id: "8", title: "Icon Set", description: "Custom icon library with 200+ icons" },
     ],
   },
   {
     name: "React",
     category: "Web",
     projects: [
-      { 
-        id: "9", 
-        title: "Dashboard App", 
-        description: "Analytics dashboard with real-time data",
-        longDescription: "Built a comprehensive analytics dashboard featuring real-time data visualization, interactive charts, customizable widgets, and dark mode support. Integrated with multiple data sources via REST APIs and WebSocket connections.",
-        images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],
-        technologies: ["React", "TypeScript", "Recharts", "TailwindCSS"],
-        link: "https://github.com"
-      },
+      { id: "9", title: "Dashboard App", description: "Analytics dashboard with real-time data" },
+      { id: "10", title: "E-commerce Platform", description: "Full-stack shopping experience" },
     ],
   },
   {
     name: "TypeScript",
     category: "Programming",
-    projects: [],
+    projects: [
+      { id: "11", title: "API Library", description: "Type-safe REST API wrapper" },
+    ],
   },
   {
     name: "Figma",
     category: "Design",
     projects: [
-      { 
-        id: "12", 
-        title: "Design System", 
-        description: "Complete component library",
-        longDescription: "Created an extensive design system with over 50 components, variant styles, auto-layout patterns, and documentation. The system improved design consistency across products and reduced design-to-development handoff time by 40%.",
-        images: ["https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800"],
-        technologies: ["Figma", "Design Tokens", "Auto Layout"],
-      },
+      { id: "12", title: "Design System", description: "Complete component library" },
+      { id: "13", title: "Mobile App UI", description: "iOS app redesign" },
     ],
   },
   {
     name: "Node.js",
     category: "Backend",
-    projects: [],
+    projects: [
+      { id: "14", title: "REST API", description: "Scalable backend for mobile app" },
+    ],
   },
   {
     name: "MATLAB",
     category: "Engineering",
-    projects: [],
+    projects: [
+      { id: "15", title: "Control Systems", description: "PID controller simulation" },
+    ],
   },
   {
     name: "Git",
@@ -129,7 +92,9 @@ const skillsData: Skill[] = [
   {
     name: "Docker",
     category: "DevOps",
-    projects: [],
+    projects: [
+      { id: "16", title: "Microservices", description: "Containerized application deployment" },
+    ],
   },
   {
     name: "PostgreSQL",
@@ -208,9 +173,9 @@ const InteractiveSkills = () => {
         </div>
       </div>
 
-      {/* Side panel with full project view */}
+      {/* Side panel */}
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent className="w-full sm:max-w-2xl bg-background border-l border-border overflow-y-auto">
+        <SheetContent className="w-full sm:max-w-lg bg-background border-l border-border">
           <SheetHeader className="pb-6 border-b border-border">
             <div className="flex items-center gap-3">
               <div className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -228,7 +193,15 @@ const InteractiveSkills = () => {
             </SheetDescription>
           </SheetHeader>
 
-          <div className="mt-6">
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold text-foreground">Related Projects</h3>
+              <button className="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+                <Plus className="w-4 h-4" />
+                Add Project
+              </button>
+            </div>
+
             {selectedSkill?.projects.length === 0 ? (
               <div className="py-12 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
@@ -240,81 +213,24 @@ const InteractiveSkills = () => {
                 </p>
               </div>
             ) : (
-              <div className="space-y-8">
+              <div className="space-y-3">
                 {selectedSkill?.projects.map((project) => (
-                  <article key={project.id} className="space-y-6">
-                    {/* Project Header */}
-                    <div>
-                      <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground">{project.description}</p>
-                    </div>
-
-                    {/* Project Images */}
-                    {project.images.length > 0 && (
-                      <div className="space-y-3">
-                        <img 
-                          src={project.images[0]} 
-                          alt={project.title}
-                          className="w-full h-64 object-cover rounded-xl"
-                        />
-                        {project.images.length > 1 && (
-                          <div className="grid grid-cols-2 gap-3">
-                            {project.images.slice(1).map((img, idx) => (
-                              <img 
-                                key={idx}
-                                src={img} 
-                                alt={`${project.title} ${idx + 2}`}
-                                className="w-full h-32 object-cover rounded-lg"
-                              />
-                            ))}
-                          </div>
-                        )}
+                  <div
+                    key={project.id}
+                    className="p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all group cursor-pointer"
+                  >
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {project.description}
+                        </p>
                       </div>
-                    )}
-
-                    {/* Project Description */}
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">About this project</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.longDescription}
-                      </p>
+                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <span 
-                            key={tech}
-                            className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Project Link */}
-                    {project.link && (
-                      <a 
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        View Project
-                      </a>
-                    )}
-
-                    {/* Divider between projects */}
-                    {selectedSkill.projects.indexOf(project) < selectedSkill.projects.length - 1 && (
-                      <hr className="border-border" />
-                    )}
-                  </article>
+                  </div>
                 ))}
               </div>
             )}
