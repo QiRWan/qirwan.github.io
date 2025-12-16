@@ -4,14 +4,14 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center relative px-6 pt-20">
       {/* Ambient glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="text-center z-10 max-w-4xl mx-auto">
         <p className="text-primary font-medium tracking-wider uppercase text-sm mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
           Welcome to my portfolio
         </p>
         
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up text-foreground" style={{ animationDelay: "0.2s" }}>
           Hi, I'm <span className="text-primary">Alex</span>
         </h1>
         

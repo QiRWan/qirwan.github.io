@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
+      isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-card" : ""
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -42,12 +42,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a 
-              href="#contact"
-              className="px-5 py-2 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all"
-            >
-              Hire Me
-            </a>
           </div>
           
           {/* Mobile menu button */}
@@ -73,13 +67,6 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a 
-                href="#contact"
-                className="px-5 py-2 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Hire Me
-              </a>
             </div>
           </div>
         )}
