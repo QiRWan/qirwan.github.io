@@ -21,7 +21,9 @@ interface SkillCategory {
   title: string;
   icon: React.ReactNode;
   skills: Skill[];
+  secondarySkills?: Skill[];
   colorScheme: string;
+  secondaryColorScheme?: string;
   bgColor: string;
 }
 
@@ -39,17 +41,19 @@ const computerEngineeringSkills: Skill[] = [
   { name: "Unix", category: "Computer Engineering", projects: [] },
 ];
 
-const technicalToolsSkills: Skill[] = [
-  { name: "Photoshop", category: "Technical Tools", projects: [{ id: "8", title: "Promotional Materials", description: "Created promotional content for recruitment office" }] },
-  { name: "Lightroom", category: "Technical Tools", projects: [{ id: "9", title: "Event Photography", description: "Post-processing for event documentation" }] },
-  { name: "Premiere Pro", category: "Technical Tools", projects: [] },
-  { name: "InDesign", category: "Technical Tools", projects: [] },
-  { name: "Audition", category: "Technical Tools", projects: [] },
-  { name: "Figma", category: "Technical Tools", projects: [{ id: "10", title: "Rainwater Harvesting Manual", description: "User-friendly graphic manual for rural Philippines communities", longDescription: "Produced a user-friendly graphic manual using Figma, tailored to the average education level of local users.", technologies: ["Figma"], date: "May - July 2025" }] },
-  { name: "WordPress", category: "Technical Tools", projects: [{ id: "7", title: "Website Maintenance", description: "Maintained and updated recruitment website content" }] },
-  { name: "Excel", category: "Technical Tools", projects: [{ id: "11", title: "Competitor Analysis", description: "Gathered and analyzed competitor data to evaluate market" }] },
-  { name: "PowerPoint", category: "Technical Tools", projects: [{ id: "13", title: "Department Presentations", description: "Delivered audience analysis presentations" }] },
-  { name: "Gantt Chart", category: "Technical Tools", projects: [] },
+const creativeToolsSkills: Skill[] = [
+  { name: "Photoshop", category: "Creative & Productivity", projects: [{ id: "8", title: "Promotional Materials", description: "Created promotional content for recruitment office" }] },
+  { name: "Lightroom", category: "Creative & Productivity", projects: [{ id: "9", title: "Event Photography", description: "Post-processing for event documentation" }] },
+  { name: "Premiere Pro", category: "Creative & Productivity", projects: [] },
+  { name: "InDesign", category: "Creative & Productivity", projects: [] },
+  { name: "Audition", category: "Creative & Productivity", projects: [] },
+  { name: "Figma", category: "Creative & Productivity", projects: [{ id: "10", title: "Rainwater Harvesting Manual", description: "User-friendly graphic manual for rural Philippines communities", longDescription: "Produced a user-friendly graphic manual using Figma, tailored to the average education level of local users.", technologies: ["Figma"], date: "May - July 2025" }] },
+];
+
+const productivityToolsSkills: Skill[] = [
+  { name: "Excel", category: "Creative & Productivity", projects: [{ id: "11", title: "Competitor Analysis", description: "Gathered and analyzed competitor data to evaluate market" }] },
+  { name: "PowerPoint", category: "Creative & Productivity", projects: [{ id: "13", title: "Department Presentations", description: "Delivered audience analysis presentations" }] },
+  { name: "Gantt Chart", category: "Creative & Productivity", projects: [] },
 ];
 
 const professionalSkills: Skill[] = [
@@ -69,11 +73,13 @@ const skillCategories: SkillCategory[] = [
     bgColor: "from-blue-500/10 to-cyan-500/10",
   },
   {
-    title: "Technical Tools",
+    title: "Creative & Productivity",
     icon: <Palette className="w-6 h-6" />,
-    skills: technicalToolsSkills,
+    skills: creativeToolsSkills,
+    secondarySkills: productivityToolsSkills,
     colorScheme: "bg-pink-100 text-pink-700 border-pink-200 hover:bg-pink-200",
-    bgColor: "from-pink-500/10 to-rose-500/10",
+    secondaryColorScheme: "bg-purple-100 text-purple-700 border-purple-200 hover:bg-purple-200",
+    bgColor: "from-pink-500/10 to-purple-500/10",
   },
   {
     title: "Professional Skills",
@@ -115,8 +121,8 @@ const InteractiveSkills = () => {
               key={category.title}
               className={`p-6 rounded-2xl border border-border bg-gradient-to-br ${category.bgColor} backdrop-blur-sm`}
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <div className="flex items-center gap-3 md:min-w-[200px]">
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                <div className="flex items-center gap-3 md:min-w-[200px] md:pt-2">
                   <div className={`p-2 rounded-lg ${category.colorScheme.split(" ").slice(0, 2).join(" ")}`}>
                     {category.icon}
                   </div>
@@ -125,19 +131,40 @@ const InteractiveSkills = () => {
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2 flex-1">
-                  {category.skills.map((skill) => (
-                    <button
-                      key={skill.name}
-                      onClick={() => handleSkillClick(skill)}
-                      className={`px-4 py-2 rounded-full border font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-card cursor-pointer ${category.colorScheme}`}
-                    >
-                      {skill.name}
-                      {skill.projects.length > 0 && (
-                        <span className="ml-1 text-xs opacity-70">({skill.projects.length})</span>
-                      )}
-                    </button>
-                  ))}
+                <div className="flex flex-col gap-3 flex-1">
+                  {/* Primary skills row */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <button
+                        key={skill.name}
+                        onClick={() => handleSkillClick(skill)}
+                        className={`px-4 py-2 rounded-full border font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-card cursor-pointer ${category.colorScheme}`}
+                      >
+                        {skill.name}
+                        {skill.projects.length > 0 && (
+                          <span className="ml-1 text-xs opacity-70">({skill.projects.length})</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Secondary skills row (if exists) */}
+                  {category.secondarySkills && (
+                    <div className="flex flex-wrap gap-2">
+                      {category.secondarySkills.map((skill) => (
+                        <button
+                          key={skill.name}
+                          onClick={() => handleSkillClick(skill)}
+                          className={`px-4 py-2 rounded-full border font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-card cursor-pointer ${category.secondaryColorScheme || category.colorScheme}`}
+                        >
+                          {skill.name}
+                          {skill.projects.length > 0 && (
+                            <span className="ml-1 text-xs opacity-70">({skill.projects.length})</span>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
