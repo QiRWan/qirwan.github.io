@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, ExternalLink, Code, Palette, Users } from "lucide-react";
+import { Code, Palette, Users } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 
 interface Project {
@@ -32,9 +32,7 @@ const computerEngineeringSkills: Skill[] = [
   { name: "C++", category: "Computer Engineering", projects: [{ id: "2", title: "Programming Fundamentals", description: "Core programming concepts and algorithms implementation" }] },
   { name: "C#", category: "Computer Engineering", projects: [{ id: "3", title: "Computer Fundamentals", description: "Foundational computer science concepts and applications" }] },
   { name: "Java", category: "Computer Engineering", projects: [] },
-  { name: "TypeScript", category: "Computer Engineering", projects: [{ id: "19", title: "Portfolio Website", description: "This portfolio website built with React and TypeScript" }] },
-  { name: "HTML", category: "Computer Engineering", projects: [{ id: "20", title: "Web Development", description: "Markup for web pages and applications" }] },
-  { name: "CSS", category: "Computer Engineering", projects: [{ id: "21", title: "Web Styling", description: "Styling and responsive design for web applications" }] },
+  { name: "TypeScript / HTML / CSS", category: "Computer Engineering", projects: [{ id: "19", title: "This Website", description: "This website." }] },
   { name: "SQL", category: "Computer Engineering", projects: [] },
   { name: "MATLAB", category: "Computer Engineering", projects: [] },
   { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Verilog Wordle Game", description: "Classic Wordle game implemented on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
@@ -77,7 +75,7 @@ const skillCategories: SkillCategory[] = [
     bgColor: "from-blue-500/10 to-cyan-500/10",
   },
   {
-    title: "Creative\n&\nProductivity",
+    title: "Creative Tools\n&\nProductivity",
     icon: <Palette className="w-6 h-6" />,
     skills: creativeToolsSkills,
     secondarySkills: productivityToolsSkills,
@@ -189,50 +187,32 @@ const InteractiveSkills = () => {
           </SheetHeader>
 
           <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-foreground">Related Projects</h3>
-              <button className="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
-                <Plus className="w-4 h-4" />
-                Add Project
-              </button>
-            </div>
-
             {selectedSkill?.projects.length === 0 ? (
               <div className="py-12 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
-                  <Plus className="w-6 h-6 text-muted-foreground" />
-                </div>
-                <p className="text-muted-foreground">No projects yet</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Add your first project for {selectedSkill?.name}
-                </p>
+                <p className="text-muted-foreground">No details available yet.</p>
               </div>
             ) : (
               <div className="space-y-4">
                 {selectedSkill?.projects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all"
-                  >
-                    <div className="flex items-start justify-between mb-3">
+                  <div key={project.id} className="space-y-4">
+                    {project.title && project.title !== "This Website" && (
                       <h4 className="font-semibold text-foreground text-lg">
                         {project.title}
                       </h4>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                    
-                    {project.date && (
-                      <p className="text-xs text-primary mb-2">{project.date}</p>
                     )}
                     
-                    <p className="text-muted-foreground mb-4">
+                    {project.date && (
+                      <p className="text-sm text-primary">{project.date}</p>
+                    )}
+                    
+                    <p className="text-muted-foreground text-lg leading-relaxed">
                       {project.longDescription || project.description}
                     </p>
                     
                     {project.technologies && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 pt-2">
                         {project.technologies.map((tech) => (
-                          <span key={tech} className="px-2 py-1 text-xs bg-secondary rounded-full text-muted-foreground">
+                          <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
                             {tech}
                           </span>
                         ))}
