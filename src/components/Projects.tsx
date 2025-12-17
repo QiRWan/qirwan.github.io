@@ -3,15 +3,46 @@ import { ExternalLink, Github } from "lucide-react";
 const technicalProjects = [
   {
     title: "Verilog Wordle Game",
-    description: "Implemented the classic Wordle game in Verilog on an FPGA board with PS/2 keyboard and VGA display. Used Finite State Machines, Block RAM-based word database, and LFSR for random word selection.",
-    tags: ["Verilog", "FPGA", "ModelSim", "Git"],
+    description: [
+      "Implemented the classic Wordle game in Verilog on an FPGA board",
+      "Integrated PS/2 keyboard input and VGA display output",
+      "Used Finite State Machines and Block RAM-based word database",
+      "Implemented LFSR for random word selection",
+    ],
+    tags: [
+      ["Verilog", "FPGA"],
+      ["ModelSim", "Git"],
+    ],
     color: "from-blue-500/20 to-cyan-500/20",
     date: "Nov - Dec 2025",
   },
   {
+    title: "Flowmeter Assembly Jig",
+    description: [
+      "Led a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation",
+      "Managed project timeline with Gantt Chart",
+      "Reduced manufacturing cost by 64%",
+      "Ensured regulatory compliance with industry standards",
+    ],
+    tags: [
+      ["Project Management", "Leadership"],
+      ["Excel", "AutoCAD"],
+    ],
+    color: "from-amber-500/20 to-orange-500/20",
+    date: "Dec 2024 - Apr 2025",
+  },
+  {
     title: "Rainwater Harvesting System",
-    description: "Designed and prototyped an innovative rainwater harvesting system for rural Philippines communities during Engineering Internship. Created a user-friendly graphic manual with Figma and conducted on-site field research.",
-    tags: ["Figma", "Engineering Design", "Prototyping", "Research"],
+    description: [
+      "Designed and prototyped an innovative rainwater harvesting system",
+      "Targeted rural Philippines communities during Engineering Internship",
+      "Created a user-friendly graphic manual with Figma",
+      "Conducted on-site field research and community engagement",
+    ],
+    tags: [
+      ["Figma", "Engineering Design"],
+      ["Prototyping", "Research"],
+    ],
     color: "from-green-500/20 to-teal-500/20",
     date: "May - Jul 2025",
   },
@@ -19,29 +50,45 @@ const technicalProjects = [
 
 const professionalProjects = [
   {
-    title: "Flowmeter Assembly Jig",
-    description: "Led a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation. Managed timeline with Gantt Chart, reduced cost by 64%, and ensured regulatory compliance.",
-    tags: ["Project Management", "Excel", "AutoCAD", "Leadership"],
-    color: "from-amber-500/20 to-orange-500/20",
-    date: "Dec 2024 - Apr 2025",
-  },
-  {
     title: "Communication & AudioVisual Projects",
-    description: "Created promotional materials and multimedia content using Adobe Creative Suite. Developed video content, graphics, and visual communications for student recruitment and outreach initiatives.",
-    tags: ["Adobe Premiere", "Photoshop", "Video Production", "Graphic Design"],
+    description: [
+      "Created promotional materials and multimedia content using Adobe Creative Suite",
+      "Developed video content for student recruitment initiatives",
+      "Designed graphics and visual communications for outreach",
+    ],
+    tags: [
+      ["Adobe Premiere", "Photoshop"],
+      ["Video Production", "Graphic Design"],
+    ],
     color: "from-pink-500/20 to-rose-500/20",
     date: "Sep 2025 - Present",
   },
   {
     title: "International Culture Fest 2024",
-    description: "Co-organized the largest festival in Southwestern New Brunswick with over 10,000 participants. Coordinated logistics, volunteers, and multi-cultural programming.",
-    tags: ["Event Coordination", "Communication", "Teamwork"],
+    description: [
+      "Co-organized the largest festival in Southwestern New Brunswick",
+      "Managed event with over 10,000 participants",
+      "Coordinated logistics and volunteer teams",
+      "Programmed multi-cultural activities and performances",
+    ],
+    tags: [
+      ["Event Coordination", "Communication"],
+      ["Teamwork", "Leadership"],
+    ],
     color: "from-purple-500/20 to-violet-500/20",
     date: "Jun - Aug 2024",
   },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof technicalProjects[0]; index: number }) => (
+type Project = {
+  title: string;
+  description: string[];
+  tags: string[][];
+  color: string;
+  date: string;
+};
+
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <div 
     key={index}
     className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
@@ -59,19 +106,27 @@ const ProjectCard = ({ project, index }: { project: typeof technicalProjects[0];
         </h3>
         <span className="text-xs text-primary">{project.date}</span>
       </div>
-      <p className="text-muted-foreground mb-4 text-sm">
-        {project.description}
-      </p>
       
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tags.map((tag, tagIndex) => (
-          <span 
-            key={tagIndex}
-            className="px-3 py-1 text-xs font-medium bg-secondary rounded-full text-muted-foreground"
-          >
-            {tag}
-          </span>
+      {/* Bullet point description */}
+      <ul className="text-muted-foreground mb-4 text-sm list-disc list-inside space-y-1">
+        {project.description.map((point, pointIndex) => (
+          <li key={pointIndex}>{point}</li>
+        ))}
+      </ul>
+      
+      {/* Tags on separate lines */}
+      <div className="flex flex-col gap-2 mb-4">
+        {project.tags.map((tagRow, rowIndex) => (
+          <div key={rowIndex} className="flex flex-wrap gap-2">
+            {tagRow.map((tag, tagIndex) => (
+              <span 
+                key={tagIndex}
+                className="px-3 py-1 text-xs font-medium bg-secondary rounded-full text-muted-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         ))}
       </div>
       
