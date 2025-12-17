@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { X, Plus, ExternalLink } from "lucide-react";
+import { Plus, ExternalLink } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 
 interface Project {
   id: string;
   title: string;
   description: string;
+  longDescription?: string;
+  technologies?: string[];
+  date?: string;
 }
 
 interface Skill {
@@ -15,91 +18,162 @@ interface Skill {
 }
 
 const skillsData: Skill[] = [
+  // Software Engineering
   {
-    name: "Verilog",
-    category: "Hardware",
+    name: "Python",
+    category: "Programming",
     projects: [
-      { id: "1", title: "FPGA Signal Processor", description: "Real-time signal processing on Xilinx FPGA" },
-      { id: "2", title: "UART Controller", description: "Custom UART communication module" },
+      { id: "1", title: "Data Analysis Scripts", description: "Using Pandas and NumPy for data processing and analysis" },
     ],
   },
   {
     name: "C++",
     category: "Programming",
     projects: [
-      { id: "3", title: "Game Engine", description: "Custom 2D game engine with physics" },
-      { id: "4", title: "Data Structures Library", description: "Optimized implementations of common data structures" },
+      { id: "2", title: "Programming Fundamentals", description: "Core programming concepts and algorithms implementation" },
     ],
   },
   {
-    name: "Python",
+    name: "C#",
     category: "Programming",
     projects: [
-      { id: "5", title: "ML Image Classifier", description: "CNN-based image classification system" },
-      { id: "6", title: "Automation Scripts", description: "Workflow automation tools" },
+      { id: "3", title: "Computer Fundamentals", description: "Foundational computer science concepts and applications" },
     ],
   },
   {
-    name: "Adobe Illustrator",
-    category: "Design",
-    projects: [
-      { id: "7", title: "Brand Identity", description: "Complete branding for tech startup" },
-      { id: "8", title: "Icon Set", description: "Custom icon library with 200+ icons" },
-    ],
-  },
-  {
-    name: "React",
-    category: "Web",
-    projects: [
-      { id: "9", title: "Dashboard App", description: "Analytics dashboard with real-time data" },
-      { id: "10", title: "E-commerce Platform", description: "Full-stack shopping experience" },
-    ],
-  },
-  {
-    name: "TypeScript",
+    name: "Java",
     category: "Programming",
-    projects: [
-      { id: "11", title: "API Library", description: "Type-safe REST API wrapper" },
-    ],
+    projects: [],
   },
   {
-    name: "Figma",
-    category: "Design",
-    projects: [
-      { id: "12", title: "Design System", description: "Complete component library" },
-      { id: "13", title: "Mobile App UI", description: "iOS app redesign" },
-    ],
+    name: "SQL",
+    category: "Database",
+    projects: [],
   },
   {
-    name: "Node.js",
-    category: "Backend",
+    name: "Verilog",
+    category: "Hardware",
     projects: [
-      { id: "14", title: "REST API", description: "Scalable backend for mobile app" },
+      { 
+        id: "4", 
+        title: "Verilog Wordle Game", 
+        description: "Classic Wordle game implemented on FPGA",
+        longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow. Designed a Block RAM-based word database accessed via an LFSR to randomly select game words.",
+        technologies: ["Verilog", "FPGA", "ModelSim", "Git"],
+        date: "November - December 2025"
+      },
     ],
   },
   {
     name: "MATLAB",
     category: "Engineering",
+    projects: [],
+  },
+  // Developer Tools
+  {
+    name: "Git",
+    category: "Tools",
     projects: [
-      { id: "15", title: "Control Systems", description: "PID controller simulation" },
+      { id: "5", title: "Version Control", description: "Used for collaboration and version control across all projects" },
     ],
   },
   {
-    name: "Git",
+    name: "Spice",
     category: "Tools",
     projects: [],
   },
   {
-    name: "Docker",
-    category: "DevOps",
+    name: "ModelSim",
+    category: "Tools",
     projects: [
-      { id: "16", title: "Microservices", description: "Containerized application deployment" },
+      { id: "6", title: "Verilog Debugging", description: "Signal verification and logic correctness testing" },
     ],
   },
   {
-    name: "PostgreSQL",
-    category: "Database",
+    name: "Unix",
+    category: "Tools",
     projects: [],
+  },
+  {
+    name: "WordPress",
+    category: "Tools",
+    projects: [
+      { id: "7", title: "Website Maintenance", description: "Maintained and updated recruitment website content" },
+    ],
+  },
+  // Adobe Creative Suite
+  {
+    name: "Photoshop",
+    category: "Design",
+    projects: [
+      { id: "8", title: "Promotional Materials", description: "Created promotional content for recruitment office" },
+    ],
+  },
+  {
+    name: "Lightroom",
+    category: "Design",
+    projects: [
+      { id: "9", title: "Event Photography", description: "Post-processing for event documentation" },
+    ],
+  },
+  {
+    name: "Premiere Pro",
+    category: "Design",
+    projects: [],
+  },
+  {
+    name: "InDesign",
+    category: "Design",
+    projects: [],
+  },
+  {
+    name: "Audition",
+    category: "Design",
+    projects: [],
+  },
+  {
+    name: "Figma",
+    category: "Design",
+    projects: [
+      { 
+        id: "10", 
+        title: "Rainwater Harvesting Manual", 
+        description: "User-friendly graphic manual for rural Philippines communities",
+        longDescription: "Produced a user-friendly graphic manual using Figma, tailored to the average education level of local users to ensure ease of adoption and maintenance of the rainwater harvesting system.",
+        technologies: ["Figma"],
+        date: "May - July 2025"
+      },
+    ],
+  },
+  // Project Management
+  {
+    name: "Excel",
+    category: "Management",
+    projects: [
+      { id: "11", title: "Competitor Analysis", description: "Gathered and analyzed competitor data to evaluate market" },
+      { id: "12", title: "Project Timeline", description: "Managed project timelines using Gantt charts" },
+    ],
+  },
+  {
+    name: "PowerPoint",
+    category: "Management",
+    projects: [
+      { id: "13", title: "Department Presentations", description: "Delivered audience analysis presentations" },
+    ],
+  },
+  {
+    name: "Gantt Chart",
+    category: "Management",
+    projects: [
+      { 
+        id: "14", 
+        title: "Flowmeter Assembly Jig Project", 
+        description: "Engineering project for Amico Patient Care Corporation",
+        longDescription: "Worked in a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation (APC). Managed project timeline using Gantt Chart, utilizing critical points to ensure milestones were met within the timeframe. Coordinated monthly meetings with client to discuss expectation and gain feedback. Effectively reduced cost by 64%, readjusted the shape to make it worker friendly, and ensured compliance with regulation.",
+        technologies: ["Excel", "Gantt Chart", "AutoCAD"],
+        date: "December 2024 – April 2025"
+      },
+    ],
   },
 ];
 
@@ -107,12 +181,10 @@ const categoryColors: Record<string, string> = {
   Hardware: "bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200",
   Programming: "bg-emerald-100 text-emerald-700 border-emerald-200 hover:bg-emerald-200",
   Design: "bg-pink-100 text-pink-700 border-pink-200 hover:bg-pink-200",
-  Web: "bg-violet-100 text-violet-700 border-violet-200 hover:bg-violet-200",
-  Backend: "bg-amber-100 text-amber-700 border-amber-200 hover:bg-amber-200",
   Engineering: "bg-cyan-100 text-cyan-700 border-cyan-200 hover:bg-cyan-200",
   Tools: "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200",
-  DevOps: "bg-orange-100 text-orange-700 border-orange-200 hover:bg-orange-200",
   Database: "bg-indigo-100 text-indigo-700 border-indigo-200 hover:bg-indigo-200",
+  Management: "bg-amber-100 text-amber-700 border-amber-200 hover:bg-amber-200",
 };
 
 const InteractiveSkills = () => {
@@ -122,11 +194,6 @@ const InteractiveSkills = () => {
   const handleSkillClick = (skill: Skill) => {
     setSelectedSkill(skill);
     setIsOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-    setTimeout(() => setSelectedSkill(null), 300);
   };
 
   return (
@@ -164,7 +231,7 @@ const InteractiveSkills = () => {
 
         {/* Category legend */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
-          {Object.entries(categoryColors).slice(0, 5).map(([category, colorClass]) => (
+          {Object.entries(categoryColors).map(([category, colorClass]) => (
             <div key={category} className="flex items-center gap-2 text-sm text-muted-foreground">
               <div className={`w-3 h-3 rounded-full ${colorClass.split(" ")[0]}`} />
               <span>{category}</span>
@@ -175,7 +242,7 @@ const InteractiveSkills = () => {
 
       {/* Side panel */}
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent className="w-full sm:max-w-lg bg-background border-l border-border">
+        <SheetContent className="w-full sm:max-w-xl bg-background border-l border-border overflow-y-auto">
           <SheetHeader className="pb-6 border-b border-border">
             <div className="flex items-center gap-3">
               <div className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -213,23 +280,36 @@ const InteractiveSkills = () => {
                 </p>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {selectedSkill?.projects.map((project) => (
                   <div
                     key={project.id}
-                    className="p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all group cursor-pointer"
+                    className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all"
                   >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h4>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {project.description}
-                        </p>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <div className="flex items-start justify-between mb-3">
+                      <h4 className="font-semibold text-foreground text-lg">
+                        {project.title}
+                      </h4>
+                      <ExternalLink className="w-4 h-4 text-muted-foreground" />
                     </div>
+                    
+                    {project.date && (
+                      <p className="text-xs text-primary mb-2">{project.date}</p>
+                    )}
+                    
+                    <p className="text-muted-foreground mb-4">
+                      {project.longDescription || project.description}
+                    </p>
+                    
+                    {project.technologies && (
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <span key={tech} className="px-2 py-1 text-xs bg-secondary rounded-full text-muted-foreground">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

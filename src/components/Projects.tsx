@@ -2,28 +2,32 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern shopping experience with real-time inventory and seamless checkout.",
-    tags: ["React", "Node.js", "Stripe"],
-    color: "from-orange-500/20 to-red-500/20",
+    title: "Verilog Wordle Game",
+    description: "Implemented the classic Wordle game in Verilog on an FPGA board with PS/2 keyboard and VGA display. Used Finite State Machines, Block RAM-based word database, and LFSR for random word selection.",
+    tags: ["Verilog", "FPGA", "ModelSim", "Git"],
+    color: "from-blue-500/20 to-cyan-500/20",
+    date: "Nov - Dec 2025",
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates and team features.",
-    tags: ["TypeScript", "Next.js", "PostgreSQL"],
-    color: "from-blue-500/20 to-purple-500/20",
+    title: "Flowmeter Assembly Jig",
+    description: "Led a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation. Managed timeline with Gantt Chart, reduced cost by 64%, and ensured regulatory compliance.",
+    tags: ["Project Management", "Excel", "AutoCAD"],
+    color: "from-amber-500/20 to-orange-500/20",
+    date: "Dec 2024 - Apr 2025",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Data visualization platform with interactive charts and custom reporting.",
-    tags: ["React", "D3.js", "Python"],
+    title: "Rainwater Harvesting System",
+    description: "Designed and prototyped an innovative rainwater harvesting system for rural Philippines communities. Created a user-friendly graphic manual with Figma and conducted on-site field research.",
+    tags: ["Figma", "Engineering Design", "Research"],
     color: "from-green-500/20 to-teal-500/20",
+    date: "May - Jul 2025",
   },
   {
-    title: "Social Media App",
-    description: "Community platform with real-time messaging and content sharing features.",
-    tags: ["React Native", "Firebase", "Redux"],
+    title: "Recruitment Website Maintenance",
+    description: "Maintained and updated Engineering Student Recruitment website using WordPress. Conducted competitor analysis and created promotional materials with Adobe Creative Suite.",
+    tags: ["WordPress", "Adobe Suite", "Excel"],
     color: "from-pink-500/20 to-rose-500/20",
+    date: "Sep 2025 - Present",
   },
 ];
 
@@ -39,7 +43,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A selection of projects that showcase my skills and passion for building great products.
+            A selection of projects that showcase my engineering skills and problem-solving abilities.
           </p>
         </div>
         
@@ -56,10 +60,13 @@ const Projects = () => {
               
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-display text-xl font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs text-primary">{project.date}</span>
+                </div>
+                <p className="text-muted-foreground mb-4 text-sm">
                   {project.description}
                 </p>
                 

@@ -1,48 +1,98 @@
+import { GraduationCap, Briefcase, Award } from "lucide-react";
+
 const About = () => {
   return (
     <section id="about" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image placeholder */}
-          <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-secondary to-card overflow-hidden border border-border">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-transparent flex items-center justify-center">
-                <span className="text-6xl">👨‍💻</span>
+        <div className="text-center mb-16">
+          <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">
+            About Me
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+            Education & Experience
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Education */}
+          <div className="bg-card border border-border rounded-2xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <GraduationCap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold">Education</h3>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground">University of Toronto</h4>
+                <p className="text-primary text-sm">Sep. 2024 – Apr. 2029 (expected)</p>
+                <p className="text-muted-foreground mt-2">
+                  B.A.Sc. in Computer Engineering + PEY Co-op
+                </p>
+                <p className="text-muted-foreground">cGPA: 3.83</p>
+              </div>
+              
+              <div className="flex items-start gap-2 pt-4 border-t border-border">
+                <Award className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-foreground font-medium">Pauline Wong Global Engineering Fellowships</p>
+                  <p className="text-sm text-muted-foreground">Dean's Honor List Scholar</p>
+                </div>
               </div>
             </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-2xl -z-10" />
           </div>
-          
-          {/* Content */}
-          <div>
-            <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">
-              About Me
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Passionate about creating impactful solutions
-            </h2>
-            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              I'm a developer with a keen eye for design and a passion for building products that make a difference. With experience across the full stack, I bring ideas to life through clean code and thoughtful user experiences.
-            </p>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge with the community.
-            </p>
+
+          {/* Work Experience */}
+          <div className="bg-card border border-border rounded-2xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold">Work Experience</h3>
+            </div>
             
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="space-y-6">
               <div>
-                <p className="text-3xl font-display font-bold text-primary">5+</p>
-                <p className="text-muted-foreground text-sm">Years Experience</p>
+                <h4 className="font-semibold text-foreground">Recruitment & Outreach Communication Assistant</h4>
+                <p className="text-primary text-sm">Engineering Student Recruitment Office, UofT</p>
+                <p className="text-xs text-muted-foreground mb-2">September 2025 – Present</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Maintained website using WordPress</li>
+                  <li>• Competitor data analysis with Excel</li>
+                  <li>• Event photography & promotional materials</li>
+                </ul>
               </div>
-              <div>
-                <p className="text-3xl font-display font-bold text-primary">50+</p>
-                <p className="text-muted-foreground text-sm">Projects Completed</p>
+              
+              <div className="pt-4 border-t border-border">
+                <h4 className="font-semibold text-foreground">Engineering Intern</h4>
+                <p className="text-primary text-sm">Humanitarian Technology Program, Lingnan University</p>
+                <p className="text-xs text-muted-foreground mb-2">May – July 2025</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Designed rainwater harvesting system for rural Philippines</li>
+                  <li>• Created user-friendly graphic manual with Figma</li>
+                  <li>• Conducted on-site field research and feasibility studies</li>
+                </ul>
               </div>
-              <div>
-                <p className="text-3xl font-display font-bold text-primary">30+</p>
-                <p className="text-muted-foreground text-sm">Happy Clients</p>
-              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Relevant Courses */}
+        <div className="mt-8 bg-card border border-border rounded-2xl p-8">
+          <h3 className="font-display text-xl font-semibold mb-6">Relevant Courses</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div>
+              <h4 className="font-medium text-primary text-sm mb-2">Engineering Design</h4>
+              <p className="text-sm text-muted-foreground">Engineering Strategies & Practice, Software Design and Communication</p>
+            </div>
+            <div>
+              <h4 className="font-medium text-primary text-sm mb-2">Computer Engineering</h4>
+              <p className="text-sm text-muted-foreground">Computer Fundamentals (C#), Programming Fundamentals (C++), Computer Organization</p>
+            </div>
+            <div>
+              <h4 className="font-medium text-primary text-sm mb-2">Electrical Engineering</h4>
+              <p className="text-sm text-muted-foreground">Digital Systems (Verilog), Circuit Analysis, Signals and Systems</p>
             </div>
           </div>
         </div>
