@@ -26,9 +26,9 @@ const professionalProjects = [
     date: "Dec 2024 - Apr 2025",
   },
   {
-    title: "Recruitment Website Maintenance",
-    description: "Maintained and updated Engineering Student Recruitment website using WordPress. Conducted competitor analysis and created promotional materials with Adobe Creative Suite.",
-    tags: ["WordPress", "Adobe Suite", "Content Management"],
+    title: "Communication & AudioVisual Projects",
+    description: "Created promotional materials and multimedia content using Adobe Creative Suite. Developed video content, graphics, and visual communications for student recruitment and outreach initiatives.",
+    tags: ["Adobe Premiere", "Photoshop", "Video Production", "Graphic Design"],
     color: "from-pink-500/20 to-rose-500/20",
     date: "Sep 2025 - Present",
   },
