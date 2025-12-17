@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "Experience", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "About Me", href: "#personal" },
 ];
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="font-display text-2xl font-bold text-foreground">
-            Alex<span className="text-primary">.</span>
+            Robin<span className="text-primary">.</span>
           </a>
           
           {/* Desktop nav */}
