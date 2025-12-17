@@ -56,7 +56,7 @@ const PersonalSection = () => {
         {/* Contact Info */}
         <div className="bg-card border border-border rounded-2xl p-8">
           <h3 className="font-display text-2xl font-semibold text-center mb-8">Get In Touch</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
             <a 
               href="mailto:Robinisqirong.wang@mail.utoronto.ca"
               className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
@@ -82,7 +82,9 @@ const PersonalSection = () => {
                 <p className="text-foreground font-medium">(825) 986-9131</p>
               </div>
             </a>
-            
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-primary" />
@@ -90,6 +92,19 @@ const PersonalSection = () => {
               <div>
                 <p className="text-sm text-muted-foreground">Location</p>
                 <p className="text-foreground font-medium">Toronto, ON</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">University</p>
+                <p className="text-foreground font-medium">University of Toronto</p>
               </div>
             </div>
           </div>
