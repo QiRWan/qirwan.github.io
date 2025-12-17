@@ -32,6 +32,9 @@ const computerEngineeringSkills: Skill[] = [
   { name: "C++", category: "Computer Engineering", projects: [{ id: "2", title: "Programming Fundamentals", description: "Core programming concepts and algorithms implementation" }] },
   { name: "C#", category: "Computer Engineering", projects: [{ id: "3", title: "Computer Fundamentals", description: "Foundational computer science concepts and applications" }] },
   { name: "Java", category: "Computer Engineering", projects: [] },
+  { name: "TypeScript", category: "Computer Engineering", projects: [{ id: "19", title: "Portfolio Website", description: "This portfolio website built with React and TypeScript" }] },
+  { name: "HTML", category: "Computer Engineering", projects: [{ id: "20", title: "Web Development", description: "Markup for web pages and applications" }] },
+  { name: "CSS", category: "Computer Engineering", projects: [{ id: "21", title: "Web Styling", description: "Styling and responsive design for web applications" }] },
   { name: "SQL", category: "Computer Engineering", projects: [] },
   { name: "MATLAB", category: "Computer Engineering", projects: [] },
   { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Verilog Wordle Game", description: "Classic Wordle game implemented on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
@@ -43,6 +46,7 @@ const computerEngineeringSkills: Skill[] = [
 
 const creativeToolsSkills: Skill[] = [
   { name: "Photoshop", category: "Creative & Productivity", projects: [{ id: "8", title: "Promotional Materials", description: "Created promotional content for recruitment office" }] },
+  { name: "Illustrator", category: "Creative & Productivity", projects: [] },
   { name: "Lightroom", category: "Creative & Productivity", projects: [{ id: "9", title: "Event Photography", description: "Post-processing for event documentation" }] },
   { name: "Premiere Pro", category: "Creative & Productivity", projects: [] },
   { name: "InDesign", category: "Creative & Productivity", projects: [] },
@@ -73,7 +77,7 @@ const skillCategories: SkillCategory[] = [
     bgColor: "from-blue-500/10 to-cyan-500/10",
   },
   {
-    title: "Creative & Productivity",
+    title: "Creative\n&\nProductivity",
     icon: <Palette className="w-6 h-6" />,
     skills: creativeToolsSkills,
     secondarySkills: productivityToolsSkills,
@@ -126,7 +130,7 @@ const InteractiveSkills = () => {
                   <div className={`p-2 rounded-lg ${category.colorScheme.split(" ").slice(0, 2).join(" ")}`}>
                     {category.icon}
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-foreground">
+                  <h3 className="font-display text-xl font-semibold text-foreground whitespace-pre-line leading-tight">
                     {category.title}
                   </h3>
                 </div>
@@ -141,9 +145,6 @@ const InteractiveSkills = () => {
                         className={`px-4 py-2 rounded-full border font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-card cursor-pointer ${category.colorScheme}`}
                       >
                         {skill.name}
-                        {skill.projects.length > 0 && (
-                          <span className="ml-1 text-xs opacity-70">({skill.projects.length})</span>
-                        )}
                       </button>
                     ))}
                   </div>
@@ -158,9 +159,6 @@ const InteractiveSkills = () => {
                           className={`px-4 py-2 rounded-full border font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-card cursor-pointer ${category.secondaryColorScheme || category.colorScheme}`}
                         >
                           {skill.name}
-                          {skill.projects.length > 0 && (
-                            <span className="ml-1 text-xs opacity-70">({skill.projects.length})</span>
-                          )}
                         </button>
                       ))}
                     </div>
