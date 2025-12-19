@@ -13,73 +13,37 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Work Experience - Now first */}
-          <div className="bg-card border border-border rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Briefcase className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display text-xl font-semibold">Work Experience</h3>
+        {/* Education */}
+        <div className="bg-card border border-border rounded-2xl p-8 mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <GraduationCap className="w-6 h-6 text-primary" />
             </div>
-            
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-foreground">Recruitment & Outreach Communication Assistant</h4>
-                <p className="text-primary text-sm">Engineering Student Recruitment Office, UofT</p>
-                <p className="text-xs text-muted-foreground mb-2">September 2025 – Present</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Maintained website using WordPress</li>
-                  <li>• Competitor data analysis with Excel</li>
-                  <li>• Event photography & promotional materials</li>
-                </ul>
-              </div>
-              
-              <div className="pt-4 border-t border-border">
-                <h4 className="font-semibold text-foreground">Engineering Intern</h4>
-                <p className="text-primary text-sm">Humanitarian Technology Program, Lingnan University</p>
-                <p className="text-xs text-muted-foreground mb-2">May – July 2025</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Designed rainwater harvesting system for rural Philippines</li>
-                  <li>• Created user-friendly graphic manual with Figma</li>
-                  <li>• Conducted on-site field research and feasibility studies</li>
-                </ul>
-              </div>
-            </div>
+            <h3 className="font-display text-xl font-semibold">Education</h3>
           </div>
-
-          {/* Education - Now second */}
-          <div className="bg-card border border-border rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display text-xl font-semibold">Education</h3>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-foreground">University of Toronto</h4>
+              <p className="text-primary text-sm">Sep. 2024 – Apr. 2029 (expected)</p>
+              <p className="text-muted-foreground mt-2">
+                B.A.Sc. in Computer Engineering + PEY Co-op
+              </p>
+              <p className="text-muted-foreground">cGPA: 3.83</p>
             </div>
             
-            <div className="space-y-4">
+            <div className="flex items-start gap-2 pt-4 border-t border-border">
+              <Award className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
               <div>
-                <h4 className="font-semibold text-foreground">University of Toronto</h4>
-                <p className="text-primary text-sm">Sep. 2024 – Apr. 2029 (expected)</p>
-                <p className="text-muted-foreground mt-2">
-                  B.A.Sc. in Computer Engineering + PEY Co-op
-                </p>
-                <p className="text-muted-foreground">cGPA: 3.83</p>
-              </div>
-              
-              <div className="flex items-start gap-2 pt-4 border-t border-border">
-                <Award className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-foreground">Pauline Wong Global Engineering Fellowships</p>
-                  <p className="text-sm text-muted-foreground">Dean's Honor List Scholar</p>
-                </div>
+                <p className="text-sm text-foreground">Pauline Wong Global Engineering Fellowships</p>
+                <p className="text-sm text-muted-foreground">Dean's Honor List Scholar</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Relevant Courses */}
-        <div className="mt-8 bg-card border border-border rounded-2xl p-8">
+        <div className="bg-card border border-border rounded-2xl p-8 mb-8">
           <h3 className="font-display text-xl font-semibold mb-6">Relevant Courses</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
@@ -103,6 +67,40 @@ const About = () => {
                 <li>Digital Systems (Verilog)</li>
                 <li>Circuit Analysis</li>
                 <li>Signals and Systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Work Experience */}
+        <div className="bg-card border border-border rounded-2xl p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Briefcase className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-display text-xl font-semibold">Work Experience</h3>
+          </div>
+          
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-foreground">Recruitment & Outreach Communication Assistant</h4>
+              <p className="text-primary text-sm">Engineering Student Recruitment Office, UofT</p>
+              <p className="text-xs text-muted-foreground mb-2">September 2025 – Present</p>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Maintained website using WordPress</li>
+                <li>• Competitor data analysis with Excel</li>
+                <li>• Event photography & promotional materials</li>
+              </ul>
+            </div>
+            
+            <div className="pt-4 border-t border-border">
+              <h4 className="font-semibold text-foreground">Engineering Intern</h4>
+              <p className="text-primary text-sm">Humanitarian Technology Program, Lingnan University</p>
+              <p className="text-xs text-muted-foreground mb-2">May – July 2025</p>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Designed rainwater harvesting system for rural Philippines</li>
+                <li>• Created user-friendly graphic manual with Figma</li>
+                <li>• Conducted on-site field research and feasibility studies</li>
               </ul>
             </div>
           </div>
