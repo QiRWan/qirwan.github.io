@@ -4,7 +4,6 @@ import InteractiveSkills from "@/components/InteractiveSkills";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import PersonalSection from "@/components/PersonalSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -15,7 +14,6 @@ const Index = () => {
       <About />
       <Projects />
       <PersonalSection />
-      <Footer />
     </main>
   );
 };
