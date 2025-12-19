@@ -1,23 +1,23 @@
-import { Mountain, Waves, Snowflake, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import rockClimbingImg from "@/assets/rock-climbing.jpeg";
+import scubaDivingImg from "@/assets/scuba-diving.jpg";
+import skiingImg from "@/assets/skiing.jpeg";
 
 const hobbies = [
   {
-    icon: Mountain,
     title: "Rock Climbing",
     description: "Conquering walls and pushing limits",
-    color: "bg-amber-100 text-amber-700",
+    image: rockClimbingImg,
   },
   {
-    icon: Waves,
     title: "Scuba Diving",
     description: "Exploring underwater worlds",
-    color: "bg-blue-100 text-blue-700",
+    image: scubaDivingImg,
   },
   {
-    icon: Snowflake,
     title: "Skiing",
     description: "Carving through fresh powder",
-    color: "bg-cyan-100 text-cyan-700",
+    image: skiingImg,
   },
 ];
 
@@ -42,13 +42,19 @@ const PersonalSection = () => {
           {hobbies.map((hobby) => (
             <div
               key={hobby.title}
-              className="bg-card border border-border rounded-2xl p-8 text-center hover:border-primary/50 hover:shadow-card transition-all group"
+              className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-card transition-all group"
             >
-              <div className={`w-16 h-16 rounded-full ${hobby.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                <hobby.icon className="w-8 h-8" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={hobby.image} 
+                  alt={hobby.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <h3 className="font-display text-xl font-semibold mb-2">{hobby.title}</h3>
-              <p className="text-muted-foreground">{hobby.description}</p>
+              <div className="p-6 text-center">
+                <h3 className="font-display text-xl font-semibold mb-2">{hobby.title}</h3>
+                <p className="text-muted-foreground">{hobby.description}</p>
+              </div>
             </div>
           ))}
         </div>
