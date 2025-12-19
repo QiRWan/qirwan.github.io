@@ -34,7 +34,7 @@ const computerEngineeringSkills: Skill[] = [
   { name: "Java", category: "Computer Engineering", projects: [] },
   { name: "TypeScript / HTML / CSS", category: "Computer Engineering", projects: [{ id: "19", title: "This Website", description: "This website." }] },
   { name: "SQL", category: "Computer Engineering", projects: [] },
-  { name: "MATLAB", category: "Computer Engineering", projects: [] },
+  { name: "MATLAB", category: "Computer Engineering", projects: [{ id: "20", title: "Linear Algebra Applications", description: "Relevant course taken: Linear Algebra" }] },
   { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Verilog Wordle Game", description: "Classic Wordle game implemented on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
   { name: "Git", category: "Computer Engineering", projects: [{ id: "5", title: "Version Control", description: "Used for collaboration and version control across all projects" }] },
   { name: "Spice", category: "Computer Engineering", projects: [] },

@@ -14,36 +14,7 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Education */}
-          <div className="bg-card border border-border rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display text-xl font-semibold">Education</h3>
-            </div>
-            
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-foreground">University of Toronto</h4>
-                <p className="text-primary text-sm">Sep. 2024 – Apr. 2029 (expected)</p>
-                <p className="text-muted-foreground mt-2">
-                  B.A.Sc. in Computer Engineering + PEY Co-op
-                </p>
-                <p className="text-muted-foreground">cGPA: 3.83</p>
-              </div>
-              
-              <div className="flex items-start gap-2 pt-4 border-t border-border">
-                <Award className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-foreground font-medium">Pauline Wong Global Engineering Fellowships</p>
-                  <p className="text-sm text-muted-foreground">Dean's Honor List Scholar</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Work Experience */}
+          {/* Work Experience - Now first */}
           <div className="bg-card border border-border rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -76,6 +47,35 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          {/* Education - Now second */}
+          <div className="bg-card border border-border rounded-2xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <GraduationCap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold">Education</h3>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground">University of Toronto</h4>
+                <p className="text-primary text-sm">Sep. 2024 – Apr. 2029 (expected)</p>
+                <p className="text-muted-foreground mt-2">
+                  B.A.Sc. in Computer Engineering + PEY Co-op
+                </p>
+                <p className="text-muted-foreground">cGPA: 3.83</p>
+              </div>
+              
+              <div className="flex items-start gap-2 pt-4 border-t border-border">
+                <Award className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-foreground">Pauline Wong Global Engineering Fellowships</p>
+                  <p className="text-sm text-muted-foreground">Dean's Honor List Scholar</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Relevant Courses */}
@@ -83,16 +83,27 @@ const About = () => {
           <h3 className="font-display text-xl font-semibold mb-6">Relevant Courses</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h4 className="font-medium text-primary text-sm mb-2">Engineering Design</h4>
-              <p className="text-sm text-muted-foreground">Engineering Strategies & Practice, Software Design and Communication</p>
+              <h4 className="font-medium text-primary text-sm mb-3">Engineering Design</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>Engineering Strategies & Practice</li>
+                <li>Software Design and Communication</li>
+              </ul>
             </div>
             <div>
-              <h4 className="font-medium text-primary text-sm mb-2">Computer Engineering</h4>
-              <p className="text-sm text-muted-foreground">Computer Fundamentals (C#), Programming Fundamentals (C++), Computer Organization</p>
+              <h4 className="font-medium text-primary text-sm mb-3">Computer Engineering</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>Computer Fundamentals (C#)</li>
+                <li>Programming Fundamentals (C++)</li>
+                <li>Computer Organization</li>
+              </ul>
             </div>
             <div>
-              <h4 className="font-medium text-primary text-sm mb-2">Electrical Engineering</h4>
-              <p className="text-sm text-muted-foreground">Digital Systems (Verilog), Circuit Analysis, Signals and Systems</p>
+              <h4 className="font-medium text-primary text-sm mb-3">Electrical Engineering</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>Digital Systems (Verilog)</li>
+                <li>Circuit Analysis</li>
+                <li>Signals and Systems</li>
+              </ul>
             </div>
           </div>
         </div>
