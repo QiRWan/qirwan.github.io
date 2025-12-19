@@ -2,22 +2,24 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import rockClimbingImg from "@/assets/rock-climbing.jpeg";
 import scubaDivingImg from "@/assets/scuba-diving.jpg";
 import skiingImg from "@/assets/skiing.jpeg";
+import chessImg from "@/assets/chess-queen.png";
 
 const hobbies = [
   {
     title: "Rock Climbing",
-    description: "Conquering walls and pushing limits",
     image: rockClimbingImg,
   },
   {
     title: "Scuba Diving",
-    description: "Exploring underwater worlds",
     image: scubaDivingImg,
   },
   {
     title: "Skiing",
-    description: "Carving through fresh powder",
     image: skiingImg,
+  },
+  {
+    title: "Chess",
+    image: chessImg,
   },
 ];
 
@@ -38,22 +40,21 @@ const PersonalSection = () => {
         </div>
 
         {/* Hobbies */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {hobbies.map((hobby) => (
             <div
               key={hobby.title}
               className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-card transition-all group"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-square overflow-hidden">
                 <img 
                   src={hobby.image} 
                   alt={hobby.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="font-display text-xl font-semibold mb-2">{hobby.title}</h3>
-                <p className="text-muted-foreground">{hobby.description}</p>
+              <div className="p-4 text-center">
+                <h3 className="font-display text-lg font-semibold">{hobby.title}</h3>
               </div>
             </div>
           ))}
