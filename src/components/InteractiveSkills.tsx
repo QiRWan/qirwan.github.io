@@ -29,16 +29,16 @@ interface SkillCategory {
 
 const computerEngineeringSkills: Skill[] = [
   { name: "Python", category: "Computer Engineering", projects: [{ id: "1", title: "Data Analysis Scripts", description: "Using Pandas and NumPy for data processing and analysis" }] },
-  { name: "C++", category: "Computer Engineering", projects: [{ id: "2", title: "Programming Fundamentals", description: "Core programming concepts and algorithms implementation" }] },
-  { name: "C#", category: "Computer Engineering", projects: [{ id: "3", title: "Computer Fundamentals", description: "Foundational computer science concepts and applications" }] },
+  { name: "C++", category: "Computer Engineering", projects: [{ id: "2", title: "Relevant Courses: Programming Fundamentals", description: "Core programming concepts and algorithms implementation" }] },
+  { name: "C#", category: "Computer Engineering", projects: [{ id: "3", title: "Relevant Courses: Computer Fundamentals", description: "Foundational computer science concepts and applications" }] },
   { name: "Java", category: "Computer Engineering", projects: [] },
-  { name: "TypeScript / HTML / CSS", category: "Computer Engineering", projects: [{ id: "19", title: "This Website", description: "This website." }] },
+  { name: "TypeScript / HTML / CSS", category: "Computer Engineering", projects: [{ id: "19", title: "This Website", description: "" }] },
   { name: "SQL", category: "Computer Engineering", projects: [] },
-  { name: "MATLAB", category: "Computer Engineering", projects: [{ id: "20", title: "Linear Algebra Applications", description: "Relevant course taken: Linear Algebra" }] },
-  { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Verilog Wordle Game", description: "Classic Wordle game implemented on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
+  { name: "MATLAB", category: "Computer Engineering", projects: [{ id: "20", title: "Relevant Courses: Linear Algebra", description: "Relevant course taken: Linear Algebra" }] },
+  { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Relevant Courses: Digital System", description: "Implemented Classic Wordle game on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
   { name: "Git", category: "Computer Engineering", projects: [{ id: "5", title: "Version Control", description: "Used for collaboration and version control across all projects" }] },
-  { name: "Spice", category: "Computer Engineering", projects: [] },
-  { name: "ModelSim", category: "Computer Engineering", projects: [{ id: "6", title: "Verilog Debugging", description: "Signal verification and logic correctness testing" }] },
+  { name: "Spice", category: "Computer Engineering", projects: [{ id: "21", title: "Relevant Courses: Introductory Electronics", description: "" }] },
+  { name: "ModelSim", category: "Computer Engineering", projects: [{ id: "6", title: "Relevant Courses: Digital Systems", description: "Wrote testbench files and Utilized Modelsim to debug Verilog projects" }] },
   { name: "Unix", category: "Computer Engineering", projects: [] },
 ];
 
