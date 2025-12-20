@@ -2,6 +2,7 @@ import { ExternalLink, Github } from "lucide-react";
 import verilogWordleImg from "@/assets/verilog-wordle.jpeg";
 import flowmeterJigImg from "@/assets/flowmeter-jig.png";
 import cultureFestImg from "@/assets/culture-fest.jpeg";
+import mapJournalImg from "@/assets/map-journal.png";
 
 const technicalProjects = [
   {
@@ -67,6 +68,7 @@ const technicalProjects = [
     ],
     color: "from-indigo-500/20 to-blue-500/20",
     date: "October 2025",
+    image: mapJournalImg,
   },
 ];
 
