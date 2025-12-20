@@ -2,7 +2,8 @@ import { ExternalLink, Github } from "lucide-react";
 
 const technicalProjects = [
   {
-    title: "Verilog Wordle Game",
+    title: ["Coding Project:",
+            "Verilog Wordle Game"],
     description: [
       "Implemented the classic Wordle game in Verilog on an FPGA board",
       "Integrated PS/2 keyboard input and VGA display output",
@@ -17,7 +18,8 @@ const technicalProjects = [
     date: "Nov - Dec 2025",
   },
   {
-    title: "Flowmeter Assembly Jig",
+    title: ["Engineering Project:",
+      "Flowmeter Assembly Jig"],
     description: [
       "Led a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation",
       "Managed project timeline with Gantt Chart",
@@ -26,13 +28,14 @@ const technicalProjects = [
     ],
     tags: [
       ["Project Management", "Leadership"],
-      ["Excel", "AutoCAD"],
+      ["Excel", "AutoCAD", "Client Relation" ],
     ],
     color: "from-amber-500/20 to-orange-500/20",
     date: "Dec 2024 - Apr 2025",
   },
   {
-    title: "Rainwater Harvesting System",
+    title:[ "Engineering Project:",
+      'Rainwater Harvesting System"],
     description: [
       "Designed and prototyped an innovative rainwater harvesting system",
       "Targeted rural Philippines communities during Engineering Internship",
@@ -41,7 +44,8 @@ const technicalProjects = [
     ],
     tags: [
       ["Figma", "Engineering Design"],
-      ["Prototyping", "Research"],
+      ["Prototyping", " Site Research"],
+      ["teamwork", "Regulation Compliance"],
     ],
     color: "from-green-500/20 to-teal-500/20",
     date: "May - Jul 2025",
