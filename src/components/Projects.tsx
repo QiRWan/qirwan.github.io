@@ -52,6 +52,22 @@ const technicalProjects = [
     color: "from-green-500/20 to-teal-500/20",
     date: "May - Jul 2025",
   },
+  {
+    title: "Coding Project: Interactive Map Web Journal App",
+    description: [
+      "Developed a responsive single-page web application using JavaScript, HTML, and CSS with an interactive map featuring categorized points-of-interest",
+      "Integrated the Nominatim (OpenStreetMap) geocoding/search API via fetch for client-side place search and map navigation",
+      "Designed and iterated on the UI including dark theme and visual filtering for accessibility and visual clarity",
+      "Worked collaboratively using Git/GitHub for version control and pull-request-driven workflow",
+      "Performed iterative bug fixes and feature improvements based on commit-driven development",
+    ],
+    tags: [
+      ["JavaScript", "HTML", "CSS"],
+      ["OpenStreetMap API", "Git/GitHub"],
+    ],
+    color: "from-indigo-500/20 to-blue-500/20",
+    date: "October 2025",
+  },
 ];
 
 const professionalProjects = [
