@@ -2,24 +2,11 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import rockClimbingImg from "@/assets/rock-climbing.jpeg";
 import scubaDivingImg from "@/assets/scuba-diving.jpg";
 import skiingImg from "@/assets/skiing.jpeg";
-
-const ChessQueenIcon = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full" fill="currentColor">
-    <circle cx="50" cy="12" r="8" />
-    <circle cx="20" cy="20" r="6" />
-    <circle cx="80" cy="20" r="6" />
-    <circle cx="8" cy="35" r="5" />
-    <circle cx="92" cy="35" r="5" />
-    <path d="M8 40 L20 70 L50 55 L80 70 L92 40 L70 50 L50 20 L30 50 Z" />
-    <path d="M15 72 L85 72 L80 85 L20 85 Z" />
-    <rect x="15" y="87" width="70" height="8" rx="2" />
-  </svg>
-);
+import chessQueenImg from "@/assets/chess-queen.png";
 
 type HobbyItem = {
   title: string;
-  image?: string;
-  isIcon?: boolean;
+  image: string;
 };
 
 const hobbies: HobbyItem[] = [
@@ -37,7 +24,7 @@ const hobbies: HobbyItem[] = [
   },
   {
     title: "Chess",
-    isIcon: true,
+    image: chessQueenImg,
   },
 ];
 
@@ -65,17 +52,11 @@ const PersonalSection = () => {
               className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-card transition-all group"
             >
               <div className="aspect-square overflow-hidden flex items-center justify-center bg-secondary/30">
-                {hobby.isIcon ? (
-                  <div className="w-2/3 h-2/3 text-primary">
-                    <ChessQueenIcon />
-                  </div>
-                ) : (
-                  <img 
-                    src={hobby.image} 
-                    alt={hobby.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                )}
+                <img 
+                  src={hobby.image} 
+                  alt={hobby.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-4 text-center">
                 <h3 className="font-display text-lg font-semibold">{hobby.title}</h3>

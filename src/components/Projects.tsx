@@ -1,9 +1,11 @@
 import { ExternalLink, Github } from "lucide-react";
+import verilogWordleImg from "@/assets/verilog-wordle.jpeg";
+import flowmeterJigImg from "@/assets/flowmeter-jig.png";
+import cultureFestImg from "@/assets/culture-fest.jpeg";
 
 const technicalProjects = [
   {
-    title: ["Coding Project:",
-            "Verilog Wordle Game"],
+    title: "Coding Project: Verilog Wordle Game",
     description: [
       "Implemented the classic Wordle game in Verilog on an FPGA board",
       "Integrated PS/2 keyboard input and VGA display output",
@@ -16,10 +18,10 @@ const technicalProjects = [
     ],
     color: "from-blue-500/20 to-cyan-500/20",
     date: "Nov - Dec 2025",
+    image: verilogWordleImg,
   },
   {
-    title: ["Engineering Project:",
-      "Flowmeter Assembly Jig"],
+    title: "Engineering Project: Flowmeter Assembly Jig",
     description: [
       "Led a team of six to engineer a flowmeter assembly jig for Amico Patient Care Corporation",
       "Managed project timeline with Gantt Chart",
@@ -28,14 +30,14 @@ const technicalProjects = [
     ],
     tags: [
       ["Project Management", "Leadership"],
-      ["Excel", "AutoCAD", "Client Relation" ],
+      ["Excel", "AutoCAD", "Client Relation"],
     ],
     color: "from-amber-500/20 to-orange-500/20",
     date: "Dec 2024 - Apr 2025",
+    image: flowmeterJigImg,
   },
   {
-    title:[ "Engineering Project:",
-      'Rainwater Harvesting System"],
+    title: "Engineering Project: Rainwater Harvesting System",
     description: [
       "Designed and prototyped an innovative rainwater harvesting system",
       "Targeted rural Philippines communities during Engineering Internship",
@@ -44,8 +46,8 @@ const technicalProjects = [
     ],
     tags: [
       ["Figma", "Engineering Design"],
-      ["Prototyping", " Site Research"],
-      ["teamwork", "Regulation Compliance"],
+      ["Prototyping", "Site Research"],
+      ["Teamwork", "Regulation Compliance"],
     ],
     color: "from-green-500/20 to-teal-500/20",
     date: "May - Jul 2025",
@@ -81,6 +83,7 @@ const professionalProjects = [
     ],
     color: "from-purple-500/20 to-violet-500/20",
     date: "Jun - Aug 2024",
+    image: cultureFestImg,
   },
 ];
 
@@ -90,6 +93,7 @@ type Project = {
   tags: string[][];
   color: string;
   date: string;
+  image?: string;
 };
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
@@ -98,8 +102,16 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
   >
     {/* Project preview area */}
-    <div className={`aspect-video bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-      <span className="text-4xl opacity-50 group-hover:opacity-80 transition-opacity">🖼️</span>
+    <div className={`aspect-video bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden`}>
+      {project.image ? (
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      ) : (
+        <span className="text-4xl opacity-50 group-hover:opacity-80 transition-opacity">🖼️</span>
+      )}
     </div>
     
     {/* Content */}
