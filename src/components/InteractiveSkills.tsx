@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { Code, Palette, Users } from "lucide-react";
+import { Code, Palette, Users, Camera } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+
+// Photography images
+import photo1 from "@/assets/photo-1.jpg";
+import photo2 from "@/assets/photo-2.jpg";
+import photo3 from "@/assets/photo-3.jpg";
+import photo4 from "@/assets/photo-4.jpg";
 
 interface Project {
   id: string;
@@ -9,6 +15,7 @@ interface Project {
   longDescription?: string;
   technologies?: string[];
   date?: string;
+  images?: string[];
 }
 
 interface Skill {
@@ -50,6 +57,7 @@ const creativeToolsSkills: Skill[] = [
   { name: "InDesign", category: "Creative & Productivity", projects: [] },
   { name: "Audition", category: "Creative & Productivity", projects: [] },
   { name: "Figma", category: "Creative & Productivity", projects: [{ id: "10", title: "Rainwater Harvesting Manual", description: "User-friendly graphic manual for rural Philippines communities", longDescription: "Produced a user-friendly graphic manual using Figma, tailored to the average education level of local users.", technologies: ["Figma"], date: "May - July 2025" }] },
+  { name: "Photography", category: "Creative & Productivity", projects: [{ id: "22", title: "Travel & Portrait Photography", description: "Capturing moments through street photography, portraits, and travel documentation", longDescription: "Passionate about visual storytelling through photography. Experienced in portrait, street, and travel photography using Sony cameras and Adobe Lightroom for post-processing.", technologies: ["Sony Camera", "Adobe Lightroom", "Photoshop"], images: [photo1, photo2, photo3, photo4] }] },
 ];
 
 const productivityToolsSkills: Skill[] = [
@@ -215,6 +223,20 @@ const InteractiveSkills = () => {
                           <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
                             {tech}
                           </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Photo gallery for skills with images */}
+                    {project.images && project.images.length > 0 && (
+                      <div className="grid grid-cols-2 gap-3 pt-4">
+                        {project.images.map((img, idx) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`Photography sample ${idx + 1}`}
+                            className="w-full h-32 object-cover rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          />
                         ))}
                       </div>
                     )}
