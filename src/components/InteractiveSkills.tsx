@@ -229,13 +229,13 @@ const InteractiveSkills = () => {
 
                     {/* Photo gallery for skills with images */}
                     {project.images && project.images.length > 0 && (
-                      <div className="grid grid-cols-2 gap-3 pt-4">
+                      <div className="flex flex-col gap-4 pt-4">
                         {project.images.map((img, idx) => (
                           <img
                             key={idx}
                             src={img}
                             alt={`Photography sample ${idx + 1}`}
-                            className="w-full h-32 object-cover rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            className="w-full rounded-lg hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
                           />
                         ))}
                       </div>
