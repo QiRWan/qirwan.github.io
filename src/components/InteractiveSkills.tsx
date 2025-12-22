@@ -200,53 +200,67 @@ const InteractiveSkills = () => {
                 <p className="text-muted-foreground">No details available yet.</p>
               </div>
             ) : (
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {selectedSkill?.projects.map((project, index) => (
                   <div 
                     key={project.id} 
-                    className={`space-y-4 ${index > 0 ? 'pt-6 border-t border-border' : ''}`}
+                    className="group relative bg-card border border-border rounded-2xl overflow-hidden"
                   >
-                    {/* Project Header */}
-                    {project.title && project.title !== "This Website" && (
-                      <h4 className="font-display font-semibold text-foreground text-xl">
-                        {project.title}
-                      </h4>
-                    )}
-                    
-                    {/* Date */}
-                    {project.date && (
-                      <p className="text-sm font-medium text-primary">{project.date}</p>
-                    )}
-                    
-                    {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed">
-                      {project.longDescription || project.description}
-                    </p>
-                    
-                    {/* Technologies */}
-                    {project.technologies && project.technologies.length > 0 && (
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {project.technologies.map((tech) => (
-                          <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Photo gallery for skills with images */}
-                    {project.images && project.images.length > 0 && (
-                      <div className="flex flex-col gap-4 pt-4">
+                    {/* Project preview area */}
+                    {project.images && project.images.length > 0 ? (
+                      <div className="flex flex-col">
                         {project.images.map((img, idx) => (
-                          <img
-                            key={idx}
-                            src={img}
-                            alt={`Photography sample ${idx + 1}`}
-                            className="w-full rounded-lg hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
-                          />
+                          <div key={idx} className="aspect-video overflow-hidden">
+                            <img
+                              src={img}
+                              alt={`${project.title} - image ${idx + 1}`}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
                         ))}
                       </div>
+                    ) : (
+                      <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span className="text-4xl opacity-50">🖼️</span>
+                      </div>
                     )}
+                    
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-display text-xl font-semibold group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        {project.date && (
+                          <span className="text-xs text-primary">{project.date}</span>
+                        )}
+                      </div>
+                      
+                      {/* Description as bullet points if it's a long description */}
+                      {project.longDescription ? (
+                        <p className="text-muted-foreground mb-4 text-sm">
+                          {project.longDescription}
+                        </p>
+                      ) : (
+                        <p className="text-muted-foreground mb-4 text-sm">
+                          {project.description}
+                        </p>
+                      )}
+                      
+                      {/* Technologies as tags */}
+                      {project.technologies && project.technologies.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech) => (
+                            <span 
+                              key={tech}
+                              className="px-3 py-1 text-xs font-medium bg-secondary rounded-full text-muted-foreground"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
