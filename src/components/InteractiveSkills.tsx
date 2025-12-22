@@ -194,30 +194,37 @@ const InteractiveSkills = () => {
             </SheetDescription>
           </SheetHeader>
 
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-6">
             {selectedSkill?.projects.length === 0 ? (
               <div className="py-12 text-center">
                 <p className="text-muted-foreground">No details available yet.</p>
               </div>
             ) : (
-              <div className="space-y-4">
-                {selectedSkill?.projects.map((project) => (
-                  <div key={project.id} className="space-y-4">
+              <div className="space-y-8">
+                {selectedSkill?.projects.map((project, index) => (
+                  <div 
+                    key={project.id} 
+                    className={`space-y-4 ${index > 0 ? 'pt-6 border-t border-border' : ''}`}
+                  >
+                    {/* Project Header */}
                     {project.title && project.title !== "This Website" && (
-                      <h4 className="font-semibold text-foreground text-lg">
+                      <h4 className="font-display font-semibold text-foreground text-xl">
                         {project.title}
                       </h4>
                     )}
                     
+                    {/* Date */}
                     {project.date && (
-                      <p className="text-sm text-primary">{project.date}</p>
+                      <p className="text-sm font-medium text-primary">{project.date}</p>
                     )}
                     
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    {/* Description */}
+                    <p className="text-muted-foreground leading-relaxed">
                       {project.longDescription || project.description}
                     </p>
                     
-                    {project.technologies && (
+                    {/* Technologies */}
+                    {project.technologies && project.technologies.length > 0 && (
                       <div className="flex flex-wrap gap-2 pt-2">
                         {project.technologies.map((tech) => (
                           <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
