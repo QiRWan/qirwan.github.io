@@ -3,6 +3,7 @@ import verilogWordleImg from "@/assets/verilog-wordle.jpeg";
 import flowmeterJigImg from "@/assets/flowmeter-jig.png";
 import cultureFestImg from "@/assets/culture-fest.jpeg";
 import mapJournalImg from "@/assets/map-journal.png";
+import rainwaterSystemImg from "@/assets/rainwater-system.png";
 
 const technicalProjects = [
   {
@@ -52,6 +53,7 @@ const technicalProjects = [
     ],
     color: "from-green-500/20 to-teal-500/20",
     date: "May - Jul 2025",
+    image: rainwaterSystemImg,
   },
   {
     title: "Coding Project: Interactive Map Web Journal App",
