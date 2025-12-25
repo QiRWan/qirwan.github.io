@@ -16,7 +16,6 @@ interface Project {
   technologies?: string[];
   date?: string;
   images?: string[];
-  linkedProject?: boolean;
 }
 
 interface Skill {
@@ -43,36 +42,36 @@ const computerEngineeringSkills: Skill[] = [
   { name: "TypeScript / HTML / CSS", category: "Computer Engineering", projects: [{ id: "19", title: "This Website", description: "" }] },
   { name: "SQL", category: "Computer Engineering", projects: [] },
   { name: "MATLAB", category: "Computer Engineering", projects: [{ id: "20", title: "Relevant Courses: Linear Algebra", description: "Relevant course taken: Linear Algebra" }] },
-  { name: "Verilog", category: "Computer Engineering", projects: [{ id: "verilog-wordle", title: "Verilog Wordle Game", description: "Implemented Classic Wordle game on FPGA with PS/2 keyboard and VGA display", linkedProject: true }] },
-  { name: "Git", category: "Computer Engineering", projects: [{ id: "map-journal", title: "Interactive Map Web Journal App", description: "Used Git/GitHub for version control and pull-request-driven workflow", linkedProject: true }] },
+  { name: "Verilog", category: "Computer Engineering", projects: [{ id: "4", title: "Relevant Courses: Digital System", description: "Implemented Classic Wordle game on FPGA", longDescription: "Implemented the classic Wordle game in Verilog on an FPGA board. Integrated PS/2 keyboard and VGA display, utilizing Finite State Machines to manage game states and data flow.", technologies: ["Verilog", "FPGA", "ModelSim", "Git"], date: "November - December 2025" }] },
+  { name: "Git", category: "Computer Engineering", projects: [{ id: "5", title: "Version Control", description: "Used for collaboration and version control across all projects" }] },
   { name: "Spice", category: "Computer Engineering", projects: [{ id: "21", title: "Relevant Courses: Introductory Electronics", description: "" }] },
-  { name: "ModelSim", category: "Computer Engineering", projects: [{ id: "verilog-wordle", title: "Verilog Wordle Game", description: "Wrote testbench files and utilized ModelSim to debug Verilog projects", linkedProject: true }] },
+  { name: "ModelSim", category: "Computer Engineering", projects: [{ id: "6", title: "Relevant Courses: Digital Systems", description: "Wrote testbench files and Utilized Modelsim to debug Verilog projects" }] },
   { name: "Unix", category: "Computer Engineering", projects: [] },
 ];
 
 const creativeToolsSkills: Skill[] = [
-  { name: "Photoshop", category: "Creative & Productivity", projects: [{ id: "comm-av", title: "Communication & AudioVisual Projects", description: "Created promotional materials and graphics for student recruitment", linkedProject: true }] },
+  { name: "Photoshop", category: "Creative & Productivity", projects: [{ id: "8", title: "Promotional Materials", description: "Created promotional content for recruitment office" }] },
   { name: "Illustrator", category: "Creative & Productivity", projects: [] },
   { name: "Lightroom", category: "Creative & Productivity", projects: [{ id: "9", title: "Event Photography", description: "Post-processing for event documentation" }] },
-  { name: "Premiere Pro", category: "Creative & Productivity", projects: [{ id: "comm-av", title: "Communication & AudioVisual Projects", description: "Developed video content for student recruitment initiatives", linkedProject: true }] },
+  { name: "Premiere Pro", category: "Creative & Productivity", projects: [] },
   { name: "InDesign", category: "Creative & Productivity", projects: [] },
   { name: "Audition", category: "Creative & Productivity", projects: [] },
-  { name: "Figma", category: "Creative & Productivity", projects: [{ id: "rainwater", title: "Rainwater Harvesting System", description: "Created a user-friendly graphic manual tailored to local users", linkedProject: true }] },
+  { name: "Figma", category: "Creative & Productivity", projects: [{ id: "10", title: "Rainwater Harvesting Manual", description: "User-friendly graphic manual for rural Philippines communities", longDescription: "Produced a user-friendly graphic manual using Figma, tailored to the average education level of local users.", technologies: ["Figma"], date: "May - July 2025" }] },
   { name: "Photography", category: "Creative & Productivity", projects: [{ id: "22", title: "Travel & Portrait Photography", description: "Capturing moments through street photography, portraits, and travel documentation", longDescription: "Passionate about visual storytelling through photography. Experienced in portrait, street, and travel photography using Sony cameras and Adobe Lightroom for post-processing.", technologies: ["Sony Camera", "Adobe Lightroom", "Photoshop"], images: [photo1, photo2, photo3, photo4] }] },
 ];
 
 const productivityToolsSkills: Skill[] = [
-  { name: "Excel", category: "Creative & Productivity", projects: [{ id: "flowmeter", title: "Flowmeter Assembly Jig", description: "Gathered and analyzed competitor data for market evaluation", linkedProject: true }] },
+  { name: "Excel", category: "Creative & Productivity", projects: [{ id: "11", title: "Competitor Analysis", description: "Gathered and analyzed competitor data to evaluate market" }] },
   { name: "PowerPoint", category: "Creative & Productivity", projects: [{ id: "13", title: "Department Presentations", description: "Delivered audience analysis presentations" }] },
-  { name: "Gantt Chart", category: "Creative & Productivity", projects: [{ id: "flowmeter", title: "Flowmeter Assembly Jig", description: "Managed project timeline with Gantt Chart for engineering project", linkedProject: true }] },
+  { name: "Gantt Chart", category: "Creative & Productivity", projects: [] },
 ];
 
 const professionalSkills: Skill[] = [
-  { name: "Communication", category: "Professional", projects: [{ id: "comm-av", title: "Communication & AudioVisual Projects", description: "Created promotional materials and multimedia content", linkedProject: true }] },
-  { name: "Collaboration", category: "Professional", projects: [{ id: "rainwater", title: "Rainwater Harvesting System", description: "Worked in cross-functional teams for engineering internship", linkedProject: true }] },
-  { name: "Client Relations", category: "Professional", projects: [{ id: "flowmeter", title: "Flowmeter Assembly Jig", description: "Coordinated monthly meetings with Amico Patient Care Corporation", linkedProject: true }] },
-  { name: "Project Management", category: "Professional", projects: [{ id: "flowmeter", title: "Flowmeter Assembly Jig", description: "Led a team of six, managed timeline, reduced cost by 64%", linkedProject: true }] },
-  { name: "Event Coordination", category: "Professional", projects: [{ id: "culture-fest", title: "International Culture Fest 2024", description: "Co-organized festival with over 10,000 participants", linkedProject: true }] },
+  { name: "Communication", category: "Professional", projects: [{ id: "15", title: "Department Presentations", description: "Delivered audience analysis presentations to stakeholders" }] },
+  { name: "Collaboration", category: "Professional", projects: [{ id: "16", title: "Team Projects", description: "Worked effectively in cross-functional engineering teams" }] },
+  { name: "Client Relations", category: "Professional", projects: [{ id: "17", title: "Stakeholder Management", description: "Coordinated monthly meetings with clients to discuss expectations and gain feedback" }] },
+  { name: "Project Management", category: "Professional", projects: [{ id: "14", title: "Flowmeter Assembly Jig Project", description: "Engineering project for Amico Patient Care Corporation", longDescription: "Led a team of six to engineer a flowmeter assembly jig. Managed project timeline using Gantt Chart, reduced cost by 64%.", technologies: ["Excel", "Gantt Chart", "AutoCAD"], date: "December 2024 – April 2025" }] },
+  { name: "Event Coordination", category: "Professional", projects: [{ id: "18", title: "International Culture Fest 2024", description: "Co-organized the largest festival in Southwestern New Brunswick with over 10,000 participants" }] },
 ];
 
 const skillCategories: SkillCategory[] = [
@@ -204,59 +203,42 @@ const InteractiveSkills = () => {
               <div className="space-y-4">
                 {selectedSkill?.projects.map((project) => (
                   <div key={project.id} className="space-y-4">
-                    {project.linkedProject ? (
-                      <a 
-                        href="#projects" 
-                        onClick={() => setIsOpen(false)}
-                        className="block p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group"
-                      >
-                        <h4 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">
-                          {project.title} →
-                        </h4>
-                        <p className="text-muted-foreground text-sm mt-1">
-                          {project.description}
-                        </p>
-                      </a>
-                    ) : (
-                      <>
-                        {project.title && project.title !== "This Website" && (
-                          <h4 className="font-semibold text-foreground text-lg">
-                            {project.title}
-                          </h4>
-                        )}
-                        
-                        {project.date && (
-                          <p className="text-sm text-primary">{project.date}</p>
-                        )}
-                        
-                        <p className="text-muted-foreground text-lg leading-relaxed">
-                          {project.longDescription || project.description}
-                        </p>
-                        
-                        {project.technologies && (
-                          <div className="flex flex-wrap gap-2 pt-2">
-                            {project.technologies.map((tech) => (
-                              <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        )}
+                    {project.title && project.title !== "This Website" && (
+                      <h4 className="font-semibold text-foreground text-lg">
+                        {project.title}
+                      </h4>
+                    )}
+                    
+                    {project.date && (
+                      <p className="text-sm text-primary">{project.date}</p>
+                    )}
+                    
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {project.longDescription || project.description}
+                    </p>
+                    
+                    {project.technologies && (
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {project.technologies.map((tech) => (
+                          <span key={tech} className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                        {/* Photo gallery for skills with images */}
-                        {project.images && project.images.length > 0 && (
-                          <div className="flex flex-col gap-4 pt-4">
-                            {project.images.map((img, idx) => (
-                              <img
-                                key={idx}
-                                src={img}
-                                alt={`Photography sample ${idx + 1}`}
-                                className="w-full rounded-lg hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
-                              />
-                            ))}
-                          </div>
-                        )}
-                      </>
+                    {/* Photo gallery for skills with images */}
+                    {project.images && project.images.length > 0 && (
+                      <div className="flex flex-col gap-4 pt-4">
+                        {project.images.map((img, idx) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`Photography sample ${idx + 1}`}
+                            className="w-full rounded-lg hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
+                          />
+                        ))}
+                      </div>
                     )}
                   </div>
                 ))}

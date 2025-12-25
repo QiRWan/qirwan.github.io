@@ -2,7 +2,7 @@ import { GraduationCap, Briefcase, Award } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-32 px-10 md:px-20 lg:px-30">
+    <section id="about" className="py-32 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">
