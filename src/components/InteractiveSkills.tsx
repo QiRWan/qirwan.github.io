@@ -110,7 +110,7 @@ const InteractiveSkills = () => {
   };
 
   return (
-    <section id="skills" className="py-32 px-6">
+    <section id="skills" className="py-32 px-8 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">

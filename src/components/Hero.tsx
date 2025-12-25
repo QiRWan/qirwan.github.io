@@ -2,7 +2,7 @@ import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative px-6 pt-20">
+    <section className="min-h-screen flex flex-col justify-center items-center relative px-8 md:px-16 lg:px-24 pt-20">
       {/* Ambient glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       

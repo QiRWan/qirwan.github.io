@@ -181,7 +181,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 px-6 bg-card/50">
+    <section id="projects" className="py-32 px-8 md:px-16 lg:px-24 bg-card/50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">
